@@ -1,25 +1,14 @@
 defmodule CoffeeElixir.Router do
   use Phoenix.Router
 
-  pipeline :browser do
-    plug :accepts, ~w(html)
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
-  end
-
   pipeline :api do
     plug :accepts, ~w(json)
   end
 
-  scope "/", CoffeeElixir do
-    pipe_through :browser # Use the default browser stack
+  scope "/api", CoffeeElixir do
+    pipe_through :api
 
-    get "/", PageController, :index
+    get "/", HomeController, :index
+    resources "/users", UsersController, except: [:edit, :new]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", CoffeeElixir do
-  #   pipe_through :api
-  # end
 end

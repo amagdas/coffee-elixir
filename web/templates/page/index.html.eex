@@ -1,6 +1,0 @@
-<h1> List of packages </h1>
-<ul>
-  <%= for package <- @packages do %>
-    <li><%= package.headline %> - <%= package.slugline %></li>
-  <%= end %>
-</ul>

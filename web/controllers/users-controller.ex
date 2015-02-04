@@ -1,4 +1,4 @@
-defmodule CoffeeElixir.PageController do
+defmodule CoffeeElixir.UsersController do
   use Phoenix.Controller
 
   plug :action
@@ -13,6 +13,6 @@ defmodule CoffeeElixir.PageController do
 
   def index(conn, _params) do
     packages = get_packages("packages", "coffee_elixir")
-    render conn, "index.html", packages: packages
+    json conn, %{packages: packages}
   end
 end
