@@ -1,12 +1,10 @@
 defmodule CoffeeElixir.HomeController do
   use Phoenix.Controller
-  alias Mix.Tasks.Phoenix.Routes
-  #alias Phoenix.Router.Route
 
   plug :action
 
   defp formatRoute(route) do
-    %{verb: verb, path: path, action: action} = route
+    %{verb: verb, path: path} = route
     %{verb: verb, path: path}
   end
 

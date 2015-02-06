@@ -11,6 +11,13 @@ config :coffee_elixir, CoffeeElixir.Endpoint,
   secret_key_base: "UC69JF6kXM2gN/AQjyhuOEUvutyJTz0BPMZe6IaLSTm0Gy7HOpPl8MCMXql2x0NW",
   debug_errors: false
 
+config :coffee_elixir, CoffeeElixir.Repo,
+  database: "coffee_elixir",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"
+
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

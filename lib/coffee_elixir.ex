@@ -11,7 +11,7 @@ defmodule CoffeeElixir do
       worker(CoffeeElixir.Endpoint, []),
 
       # Here you could define other workers and supervisors as children
-      # worker(CoffeeElixir.Worker, [arg1, arg2, arg3]),
+      worker(CoffeeElixir.Repo, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
