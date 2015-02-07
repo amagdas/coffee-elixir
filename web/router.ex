@@ -5,7 +5,12 @@ defmodule CoffeeElixir.Router do
     plug :accepts, ~w(json)
   end
 
-  scope "/api", CoffeeElixir do
+  scope "/", CoffeeElixir do
+    pipe_through :api
+    get "/", HomeController, :index
+  end
+
+  scope "/api", CoffeeElixir, as: :api do
     pipe_through :api
 
     get "/", HomeController, :index

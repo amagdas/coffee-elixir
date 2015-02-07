@@ -5,7 +5,7 @@ defmodule CoffeeElixir.User do
     field :first_name, :string
     field :last_name, :string
     field :email, :string
-    field :created_at, :datetime
-    field :updated_at, :datetime
+    field :active, :boolean, default: false
+    timestamps
   end
 end
