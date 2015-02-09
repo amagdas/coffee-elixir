@@ -15,7 +15,7 @@ defmodule CoffeeElixir.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {CoffeeElixir, []},
-     applications: [:phoenix, :cowboy, :postgrex, :ecto, :logger]]
+     applications: [:phoenix, :cowboy, :mongo, :logger]]
   end
 
   # Specifies your project dependencies
@@ -24,8 +24,7 @@ defmodule CoffeeElixir.Mixfile do
   defp deps do
     [{:phoenix, github: "phoenixframework/phoenix"},
      {:cowboy, "~> 1.0"},
-     {:postgrex, "~> 0.7.0"},
-     {:ecto, "~>0.7.2"}
+     {:mongo, "~>0.5.0"}
    ]
   end
 end

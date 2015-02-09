@@ -1,11 +1,4 @@
 defmodule CoffeeElixir.User do
-  use Ecto.Model
 
-  schema "users" do
-    field :first_name, :string
-    field :last_name, :string
-    field :email, :string
-    field :active, :boolean, default: false
-    timestamps
-  end
+  defstruct name: nil, email: nil, active: false, created_at: Bson.UTC, updated_at: Bson.UTC, picture_url: nil
 end
